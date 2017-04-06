@@ -34,6 +34,34 @@
 
     <h1>YOu type : {{handle.length}} <span ng-show="handle.length < 6">{{lower}}</span></h1>
 
+    <h1>Rules</h1>
+    <ul>
+        <li ng-repeat="Rule in Rules">{{rules.RuleName}}</li>
+    </ul>
+
+    Add rule: <input type="text" ng-model="newRule"/><a href="javascript:" class="btn btn-default" ng-click="addRule()">Add</a>
+
+    <div>
+        <p style="display: inline-block; width: 10%;">Click to show HTML : <input type="checkbox" ng-model="myVar"/></p>
+        <div ng-show="myVar" ng-show="false">
+            <h1>Welcome</h1>
+            <p>Welcome to my home.</p>
+        </div>
+    </div>
+
+    <div>
+        click to show the form : <input type="checkbox" ng-model="form"/>
+        <div ng-show="form">
+            click for disable the form <input type="checkbox" ng-model="all"/><br>
+
+            <input type="text" placeholder="Enter your name" ng-disabled="all" required/><br/>
+            <input type="text" placeholder="Enter your last name" ng-disabled="all" required/><br/>
+            <select name="Gender" ng-disabled="all">
+                <option value="Gender">Male</option>
+                <option value="Gender">Female</option>
+            </select>
+        </div>
+    </div>
 </div>
 
 
