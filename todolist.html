@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-app="myApp">
+<!--<div ng-controller="todoCtrl">-->
+    <!--<div class="jumbotron">-->
+        <!--<div class="container">-->
+            <!--<h2 class="text-center">FORM TODO</h2>-->
+            <!--<form ng-submit="save(obj)" >-->
+                <!--<div class="form-group col-lg-6">-->
+                    <!--<label >Name :</label>-->
+                    <!--<input type="text" class="form-control" id="name" placeholder="Name" ng-model="obj.name" required>-->
+                <!--</div>-->
+                <!--<div class="form-group col-lg-6">-->
+                    <!--<label >Email:</label>-->
+                    <!--<input type="email" class="form-control" id="email" placeholder="Email Adress" ng-model="obj.Email" required>-->
+                <!--</div>-->
+                <!--<div class="form-group col-lg-6">-->
+                    <!--<label >Number :</label>-->
+                    <!--<input type="number" class="form-control" id="num" placeholder="Mobile Number" ng-model="obj.mobileNumber" required>-->
+                <!--</div>-->
+                <!--<div class="form-group col-lg-6">-->
+                    <!--<label >Adress:</label>-->
+                    <!--<input type="text" class="form-control" id="address" placeholder="Address" ng-model="obj.Address" required>-->
+                <!--</div>-->
+                <!--<div class="col-lg-12 text-center">-->
+                    <!--<input class="btn btn-primary btn-md text center" type="submit" value="Submit" >-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-success">Save</button>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="container">-->
+        <!--<table class="table table-striped" id="tabel">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>Firstname</th>-->
+                <!--<th>Email</th>-->
+                <!--<th>Number</th>-->
+                <!--<th>Adress</th>-->
+                <!--<th>Action</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="obj in array track by $index">-->
+                <!--<td>-->
+                    <!--{{value.name}}-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--{{value.Email}}-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--{{value.mobileNumber}}-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--{{value.Address}}-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--&lt;!&ndash;<button type="button" class="btn-primary">Edit</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="button" class="alert-danger">Delete</button>&ndash;&gt;-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div ng-controller="todoList">
+    <div class="jumbotron">
+        <div class="container">
+            <h2 class="text-center">TODO</h2>
+            <form ng-submit="save(obj)">
+                <div class="form-group col-lg-6">
+                    <label >Name :</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" ng-model="obj.name" >
+                </div>
+                <div class="form-group col-lg-6">
+                    <label >Email :</label>
+                    <input type="text" class="form-control" id="email" placeholder="email" ng-model="obj.email" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label >Number :</label>
+                    <input type="text" class="form-control" id="number" placeholder="Number" ng-model="obj.number" required>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label >Address :</label>
+                    <input type="text" class="form-control" id="address" placeholder="address" ng-model="obj.address" required>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <input class="btn btn-primary btn-md text center" type="submit" value="Submit"  >
+                    <!--<button type="button" class="btn btn-success" ng-click="isShow = true ; saving()" ng-hide="isShow">Save</button>-->
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped" id="tabel">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Email</th>
+                <th>Number</th>
+                <th>Adress</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="value in array track by $index">
+                <td >
+                    {{value.name}}
+                </td>
+                <td >
+                    {{value.email}}
+                </td>
+                <td >
+                    {{value.number}}
+                </td>
+                <td >
+                    {{value.address}}
+                </td>
+                <td>
+                    <!--<button type="button" class="btn-primary" ng-click="edit($index)">Edit</button>-->
+                    <button type="button" class="alert-danger" ng-click="delete($index)">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="javascript/jquery.min.js"></script>
+<script src="javascript/angular.min.js"></script>
+<script src="javascript/todolist.js"></script>
+<script src="javascript/bootstrap.min.js"></script>
+</body>
+</html>
